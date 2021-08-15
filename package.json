@@ -1,0 +1,48 @@
+{
+  "name": "auth-exercise-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "express": "nodemon server/express",
+    "webpack": "webpack --config ./client/webpack.config.js --watch",
+    "start": "concurrently \"npm run express\" \"npm run webpack\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ginazampino/auth-exercise-v2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ginazampino/auth-exercise-v2/issues"
+  },
+  "homepage": "https://github.com/ginazampino/auth-exercise-v2#readme",
+  "dependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "axios": "^0.21.1",
+    "babel-loader": "^8.2.2",
+    "connect-history-api-fallback": "^1.6.0",
+    "css-loader": "^6.2.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "html-webpack-plugin": "^5.3.2",
+    "mysql2": "^2.3.0",
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.12",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "vue": "^2.6.14",
+    "vue-axios": "^3.2.5",
+    "vue-loader": "^15.9.8",
+    "vue-router": "^3.5.2",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.7.2"
+  }
+}
