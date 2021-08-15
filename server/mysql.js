@@ -12,6 +12,6 @@ const conn = mysql.createConnection({
 conn.query(
     'SELECT * FROM `users`',
     function(err, results, fields) {
-        console.log(results);
+        //console.log(results);
     }
 );
