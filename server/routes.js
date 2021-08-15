@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const app = express();
 const router = express.Router();
 const passport = require('passport');
 
@@ -12,6 +13,8 @@ function authenticate(req, res, next) {
 };
 
 router.use(authenticate);
+
+const db = require('./mysql');
 
 module.exports = (app) => {
 
@@ -34,7 +37,6 @@ module.exports = (app) => {
         req.logout();
         res.redirect('/');
     });    
-    
 
     // Debug routes:
 
@@ -45,5 +47,17 @@ module.exports = (app) => {
     app.get('/fail', (req, res) => {
         res.send('Failed')
     });
-        
+
+    app.get('/debug', (req, res) => {
+        let query = 'SELECT * FROM `users`';
+
+        db.query(query, (err, result) => {
+            if (err) {
+                throw err;
+            } else {
+                console.log(result);
+                res.send('Users queried.');
+            };
+        });
+    });
 };
