@@ -48,7 +48,7 @@ module.exports = (app) => {
         res.send('Failed')
     });
 
-    app.get('/debug', (req, res) => {
+    app.get('/debug', authenticate, (req, res) => {
         let query = 'SELECT * FROM `users`';
 
         db.query(query, (err, result) => {
