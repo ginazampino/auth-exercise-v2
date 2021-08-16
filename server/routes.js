@@ -36,7 +36,13 @@ module.exports = (app) => {
     app.get('/google/logout', (req, res) => {
         req.logout();
         res.redirect('/');
-    });    
+    });
+
+    // Get routes:
+
+    app.get('/email', (req, res) => {
+        res.json(req.user.emails[0].value);
+    });
 
     // Debug routes:
 
